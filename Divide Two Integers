@@ -1,0 +1,12 @@
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        cnt = 0
+        while abs(dividend) >= abs(divisor):
+            if (dividend < 0 and divisor < 0) or (dividend > 0 and divisor > 0):
+                dividend = dividend - divisor            
+                cnt += 1
+            else:
+                dividend = dividend + divisor 
+                cnt -= 1
+                        
+        return cnt
